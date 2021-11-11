@@ -18,3 +18,7 @@ $ kubectl -n ${namespace} set image deployment/drkiq drkiq= ${ecrUrl}'/'drkiq:la
 
 5) check it :-
 $kubectl -n ${namespace} rollout status deployment/drkiq
+
+6) then exec inside pod (kubectl -n ${namespace} exec -it ${pod_name} bash) , run these commands :-
+$bundle exec rake db:reset
+$bundle exec rake db:migrate
